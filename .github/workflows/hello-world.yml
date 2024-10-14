@@ -1,0 +1,13 @@
+name: Learning GitHub Actions
+run-name: I'm learning GitHub Actions!
+on: [push]
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set variable
+        run: echo "USERNAME=${{GITHUB.actor}}" >> $GITHUB_ENV
+      - name: Run script
+        run: python hello-world.py
